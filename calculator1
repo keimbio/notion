@@ -1,0 +1,109 @@
+<form name="DilutionForm" method="post" action="">
+            <script type="text/javascript" language="javascript" src="https://www.physiologyweb.com/js/calculators/dilution_calculator_molarity_percent.js"></script>
+             <input type="hidden" name="active" id="active" value="">
+             <div class="CalculatorBox">
+               <table class="CalculatorBoxTable">
+                 <tbody><tr>
+                   <td class="CalculatorBoxTD" style="vertical-align: bottom; padding-bottom: 0px;"><b>Stock concentration</b></td>
+                   <td rowspan="3" class="CalculatorBoxTD">
+                     <div class="RadioGroupBox" style="width: 150px; height: 90px;">
+                       <span class="RadioButtonAndText" id="concentration1_unit_label_fM" style="top: 3px; left: 3px;" title="fM, femtomolar"><input type="radio" name="concentration1_unit" id="concentration1_unit_fM" value="fM" onclick="ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('fM');"><label for="concentration1_unit_fM">fM</label></span>
+                       <span class="RadioButtonAndText" id="concentration1_unit_label_pM" style="top: 23px; left: 3px;" title="pM, picomolar"><input type="radio" name="concentration1_unit" id="concentration1_unit_pM" value="pM" onclick="ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('pM');"><label for="concentration1_unit_pM">pM</label></span>
+                       <span class="RadioButtonAndText" id="concentration1_unit_label_nM" style="top: 43px; left: 3px;" title="nM, nanomolar"><input type="radio" name="concentration1_unit" id="concentration1_unit_nM" value="nM" onclick="ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('nM');"><label for="concentration1_unit_nM">nM</label></span>
+                       <span class="RadioButtonAndText" id="concentration1_unit_label_uM" style="top: 63px; left: 3px;" title="μM, micromolar"><input type="radio" name="concentration1_unit" id="concentration1_unit_uM" value="uM" onclick="ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('μM');"><label for="concentration1_unit_uM">μM</label></span>
+                       <span class="RadioButtonAndTextActive" id="concentration1_unit_label_mM" style="top: 3px; left: 66px;" title="mM, millimolar"><input type="radio" name="concentration1_unit" id="concentration1_unit_mM" value="mM" onclick="ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('mM');" checked=""><label for="concentration1_unit_mM">mM</label></span>
+                       <span class="RadioButtonAndText" id="concentration1_unit_label_M" style="top: 23px; left: 66px;" title="M, molar"><input type="radio" name="concentration1_unit" id="concentration1_unit_M" value="M" onclick="ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('M');"><label for="concentration1_unit_M">M</label></span>
+                       <span class="RadioButtonAndText" id="concentration1_unit_label_%" style="top: 43px; left: 66px;" title="%, percent"><input type="radio" name="concentration1_unit" id="concentration1_unit_%" value="%" onclick="MakeConentrationUnitsSame(6); ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('%'); ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('%');"><label for="concentration1_unit_%">%</label></span>
+                       <span class="RadioButtonAndText" id="concentration1_unit_label_Other" style="top: 63px; left: 66px;" title="Other, other"><input type="radio" name="concentration1_unit" id="concentration1_unit_Other" value="Other" onclick="MakeConentrationUnitsSame(7); ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('Other'); ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('Other');"><label for="concentration1_unit_Other">Other</label></span>
+                     </div>
+                   </td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxTD" style="padding-top: 0px; padding-bottom: 0px;"><input type="text" class="CalculatorTextBox" style="max-width: 200px;" name="Concentration1" id="Concentration1" value="" title="Concentration of the stock solution" onkeydown="if (window.event.keyCode == 13 || window.event.keyCode == 40) document.DilutionForm.Volume1.focus(); return NoEnter();"></td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxUnitLabelTD" id="Concentration1UnitLabel" style="text-align: right; vertical-align: top; padding-top: 0px;">mM</td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxTD" style="vertical-align: bottom; padding-bottom: 0px;"><b>Volume from stock</b></td>
+                   <td rowspan="3" class="CalculatorBoxTD">
+                     <div class="RadioGroupBox" style="width: 150px; height: 70px;">
+                       <span class="RadioButtonAndText" id="volume1_unit_label_fL" style="top: 3px; left: 3px;" title="fL, femtoliter"><input type="radio" name="volume1_unit" id="volume1_unit_fL" value="fL" onclick="ManageVolume1UnitLabels(); SetVolume1UnitLabel('fL');"><label for="volume1_unit_fL">fL</label></span>
+                       <span class="RadioButtonAndText" id="volume1_unit_label_pL" style="top: 23px; left: 3px;" title="pL, picoliter"><input type="radio" name="volume1_unit" id="volume1_unit_pL" value="pL" onclick="ManageVolume1UnitLabels(); SetVolume1UnitLabel('pL');"><label for="volume1_unit_pL">pL</label></span>
+                       <span class="RadioButtonAndText" id="volume1_unit_label_nL" style="top: 43px; left: 3px;" title="nL, nanoliter"><input type="radio" name="volume1_unit" id="volume1_unit_nL" value="nL" onclick="ManageVolume1UnitLabels(); SetVolume1UnitLabel('nL');"><label for="volume1_unit_nL">nL</label></span>
+                       <span class="RadioButtonAndText" id="volume1_unit_label_uL" style="top: 3px; left: 66px;" title="μL, microliter"><input type="radio" name="volume1_unit" id="volume1_unit_uL" value="uL" onclick="ManageVolume1UnitLabels(); SetVolume1UnitLabel('μL');"><label for="volume1_unit_uL">μL</label></span>
+                       <span class="RadioButtonAndTextActive" id="volume1_unit_label_mL" style="top: 23px; left: 66px;" title="mL, milliliter"><input type="radio" name="volume1_unit" id="volume1_unit_mL" value="mL" onclick="ManageVolume1UnitLabels(); SetVolume1UnitLabel('mL');" checked=""><label for="volume1_unit_mL">mL</label></span>
+                       <span class="RadioButtonAndText" id="volume1_unit_label_L" style="top: 43px; left: 66px;" title="L, liter"><input type="radio" name="volume1_unit" id="volume1_unit_L" value="L" onclick="ManageVolume1UnitLabels(); SetVolume1UnitLabel('L');"><label for="volume1_unit_L">L</label></span>
+                     </div>
+                   </td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxTD" style="padding-top: 0px; padding-bottom: 0px;"><input type="text" class="CalculatorTextBox" style="max-width: 200px;" name="Volume1" id="Volume1" value="" title="Volume to be removed from the concentrated stock solution" onkeydown="if (window.event.keyCode == 13 || window.event.keyCode == 40) document.DilutionForm.Concentration2.focus(); else if (window.event.keyCode == 38) document.DilutionForm.Concentration1.focus(); return NoEnter();"></td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxUnitLabelTD" id="Volume1UnitLabel" style="text-align: right; vertical-align: top; padding-top: 0px;">mL</td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxTD" style="vertical-align: bottom; padding-bottom: 0px;"><b>Final concentration</b></td>
+                   <td rowspan="3" class="CalculatorBoxTD">
+                     <div class="RadioGroupBox" style="width: 150px; height: 90px;">
+                       <span class="RadioButtonAndText" id="concentration2_unit_label_fM" style="top: 3px; left: 3px;" title="fM, femtomolar"><input type="radio" name="concentration2_unit" id="concentration2_unit_fM" value="fM" onclick="ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('fM');"><label for="concentration2_unit_fM">fM</label></span>
+                       <span class="RadioButtonAndText" id="concentration2_unit_label_pM" style="top: 23px; left: 3px;" title="pM, picomolar"><input type="radio" name="concentration2_unit" id="concentration2_unit_pM" value="pM" onclick="ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('pM');"><label for="concentration2_unit_pM">pM</label></span>
+                       <span class="RadioButtonAndText" id="concentration2_unit_label_nM" style="top: 43px; left: 3px;" title="nM, nanomolar"><input type="radio" name="concentration2_unit" id="concentration2_unit_nM" value="nM" onclick="ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('nM');"><label for="concentration2_unit_nM">nM</label></span>
+                       <span class="RadioButtonAndText" id="concentration2_unit_label_uM" style="top: 63px; left: 3px;" title="μM, micromolar"><input type="radio" name="concentration2_unit" id="concentration2_unit_uM" value="uM" onclick="ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('μM');"><label for="concentration2_unit_uM">μM</label></span>
+                       <span class="RadioButtonAndTextActive" id="concentration2_unit_label_mM" style="top: 3px; left: 66px;" title="mM, millimolar"><input type="radio" name="concentration2_unit" id="concentration2_unit_mM" value="mM" onclick="ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('mM');" checked=""><label for="concentration2_unit_mM">mM</label></span>
+                       <span class="RadioButtonAndText" id="concentration2_unit_label_M" style="top: 23px; left: 66px;" title="M, molar"><input type="radio" name="concentration2_unit" id="concentration2_unit_M" value="M" onclick="ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('M');"><label for="concentration2_unit_M">M</label></span>
+                       <span class="RadioButtonAndText" id="concentration2_unit_label_%" style="top: 43px; left: 66px;" title="%, percent"><input type="radio" name="concentration2_unit" id="concentration2_unit_%" value="%" onclick="MakeConentrationUnitsSame(6); ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('%'); ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('%');"><label for="concentration2_unit_%">%</label></span>
+                       <span class="RadioButtonAndText" id="concentration2_unit_label_Other" style="top: 63px; left: 66px;" title="Other, other"><input type="radio" name="concentration2_unit" id="concentration2_unit_Other" value="Other" onclick="MakeConentrationUnitsSame(7); ManageConcentration2UnitLabels(); SetConcentration2UnitLabel('Other'); ManageConcentration1UnitLabels(); SetConcentration1UnitLabel('Other');"><label for="concentration2_unit_Other">Other</label></span>
+                     </div>
+                   </td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxTD" style="padding-top: 0px; padding-bottom: 0px;"><input type="text" class="CalculatorTextBox" style="max-width: 200px;" name="Concentration2" id="Concentration2" value="" title="Final concentration of the diluted solution" onkeydown="if (window.event.keyCode == 13 || window.event.keyCode == 40) document.DilutionForm.Volume2.focus(); else if (window.event.keyCode == 38) document.DilutionForm.Volume1.focus(); return NoEnter();"></td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxUnitLabelTD" id="Concentration2UnitLabel" style="text-align: right; vertical-align: top; padding-top: 0px;">mM</td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxTD" style="vertical-align: bottom; padding-bottom: 0px;"><b>Final solution volume</b></td>
+                   <td rowspan="3" class="CalculatorBoxTD">
+                     <div class="RadioGroupBox" style="width: 150px; height: 70px;">
+                       <span class="RadioButtonAndText" id="volume2_unit_label_fL" style="top: 3px; left: 3px;" title="fL, femtoliter"><input type="radio" name="volume2_unit" id="volume2_unit_fL" value="fL" onclick="ManageVolume2UnitLabels(); SetVolume2UnitLabel('fL');"><label for="volume2_unit_fL">fL</label></span>
+                       <span class="RadioButtonAndText" id="volume2_unit_label_pL" style="top: 23px; left: 3px;" title="pL, picoliter"><input type="radio" name="volume2_unit" id="volume2_unit_pL" value="pL" onclick="ManageVolume2UnitLabels(); SetVolume2UnitLabel('pL');"><label for="volume2_unit_pL">pL</label></span>
+                       <span class="RadioButtonAndText" id="volume2_unit_label_nL" style="top: 43px; left: 3px;" title="nL, nanoliter"><input type="radio" name="volume2_unit" id="volume2_unit_nL" value="nL" onclick="ManageVolume2UnitLabels(); SetVolume2UnitLabel('nL');"><label for="volume2_unit_nL">nL</label></span>
+                       <span class="RadioButtonAndText" id="volume2_unit_label_uL" style="top: 3px; left: 66px;" title="μL, microliter"><input type="radio" name="volume2_unit" id="volume2_unit_uL" value="uL" onclick="ManageVolume2UnitLabels(); SetVolume2UnitLabel('μL');"><label for="volume2_unit_uL">μL</label></span>
+                       <span class="RadioButtonAndTextActive" id="volume2_unit_label_mL" style="top: 23px; left: 66px;" title="mL, milliliter"><input type="radio" name="volume2_unit" id="volume2_unit_mL" value="mL" onclick="ManageVolume2UnitLabels(); SetVolume2UnitLabel('mL');" checked=""><label for="volume2_unit_mL">mL</label></span>
+                       <span class="RadioButtonAndText" id="volume2_unit_label_L" style="top: 43px; left: 66px;" title="L, liter"><input type="radio" name="volume2_unit" id="volume2_unit_L" value="L" onclick="ManageVolume2UnitLabels(); SetVolume2UnitLabel('L');"><label for="volume2_unit_L">L</label></span>
+                     </div>
+                   </td>
+                   </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxTD" style="padding-top: 0px; padding-bottom: 0px;"><input type="text" class="CalculatorTextBox" style="max-width: 200px;" name="Volume2" id="Volume2" value="" title="Final volume of the diluted solution" onkeydown="if (window.event.keyCode == 13 || window.event.keyCode == 40) document.DilutionForm.calculate.focus(); else if (window.event.keyCode == 38) document.DilutionForm.Concentration2.focus(); return NoEnter();"></td>
+                 </tr>
+            
+                 <tr>
+                   <td class="CalculatorBoxUnitLabelTD" id="Volume2UnitLabel" style="text-align: right; vertical-align: top; padding-top: 0px;">mL</td>
+                 </tr>
+            
+                 <tr>
+                   <td colspan="2" class="CalculatorBoxTDButtons">
+                     <input type="button" class="CalculatorButtonRounded" name="calculate" id="calculate" value="Calculate" title="Calculate the value of the blank or highlighted cell" onclick="Select_Calculation();">
+                        &nbsp;&nbsp;
+                     <input type="reset" class="CalculatorButtonRounded" name="reset" value="Clear All" title="Clear all values" onclick="ResetForm(); ResetLabels(); ResetUnitLabels(); ClearErrorMessage(); document.DilutionForm.Concentration1.focus();">
+                   </td>
+                 </tr>
+            
+               </tbody></table>
+               <div class="ErrorText" id="CalculationErrorText"></div>
+             </div>
+            </form>
